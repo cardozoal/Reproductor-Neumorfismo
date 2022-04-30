@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor Neo</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <!-- Contenedor Padre -->
+    <div class="container">
+        <div class="player">
+            
+            <!-- Botones -->
+            <div class="player__controls">
+
+<!-- el primer Btn es para darle estilos generales a los botones, mientras el segundo es para darle tamaño -->
+                <div class="player__btn player__btn--small" id="previous">
+                   
+                    <!-- Icono del boton -->
+                    <i class="fas fa-arrow-left"> </i>
+                </div>
+                <h5 class="player__title">playing now</h5>
+                <div class="player__btn player__btn--small" id="icon-menu">
+                    
+                    <!-- Boton de menu -->
+                    <i class="fas fa-bars"> </i>
+                </div>
+            </div>
+            
+            <!-- Imagen del Album o Cancion -->
+            <div class="player__album">
+            <img
+            src="assets/images/Spike.jpg" 
+            alt="Album Cover" 
+            class="player__img"
+            loading="lazy">
+        </div>
+        
+        <!-- Nombre del artista y cancion -->
+        <h2 class="player__artist">Alicks</h2>
+        <h3 class="player__song">Maya</h3>
+
+        
+        <!-- Retroceso y Avance de cancion -->
+<input type="range" value="0" min="0" step="0.1" class= "player__level" onchange="playerTo()" id="range">
+        
+    <!-- Duracion de la cancion -->
+    <div class="audio-duration">
+            <div class="start">00:00</div>
+                <div class="end">03:53</div>
+            </div>
+                
+            <!-- Etiqueta audio -->
+            <audio class="player__audio" controls id="audio">
+                    <source src="assets/media/Song.mp3" type="audio/mpeg"/>
+                </audio>
+
+                <!-- Reutilizar Controles -->
+                <div class="player__controls">
+                <div class="player__btn player__btn--medium" id="backward">
+               <i class="fas fa-backward"></i> 
+                </div>
+               
+                <!-- Boton de Play y pausa -->
+                <div class="player__btn player__btn--medium blue play" id="play">
+                    <i class="fas fa-play play-btn"></i>
+                    <i class="fas fa-pause pause-btn hide"></i>
+                     </div>
+
+                     <!-- Boton de Siguiente -->
+                <div class="player__btn player__btn--medium" id="forward">
+               <i class="fas fa-forward"></i>
+                </div>
+            </div>
+
+         
+    </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
